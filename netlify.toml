@@ -1,4 +1,0 @@
-[build]
-  command = "yarn run config && jekyll build --config _config.yml,_config2.yml && yarn run lambda-build" # your build command
-  publish = "_site" # where your production ready client code lives AFTER your build command has run
-  functions = "lambda" # where your production ready lambda functions live AFTER your build command has run
