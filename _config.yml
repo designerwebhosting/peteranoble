@@ -95,7 +95,7 @@ page_gen:
     dir: members
     extension: html
     filter: 
-copyright: Copyright © 2018-2019 Peter Noble
+copyright: Copyright © 2018-2022 Peter Noble
 language: en-GB
 subtitle: The latest blog posts from Peter Noble.
 sumary: The latest blog posts from Peter Noble.
