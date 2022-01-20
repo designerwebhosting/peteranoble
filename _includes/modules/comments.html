@@ -1,0 +1,30 @@
+<!--comments-->
+         <h3>Comments</h3>{% assign slug = page.title | slugify %}{% if page.comments == true %}{% assign slugs = false %}
+         <ul>{% for comment in site.data.comments %}{% if comment.slug == slug %}
+            <li>
+              <p><b>{{ comment.name }}</b> on {{ comment.created_at | date: "%B %d, %Y at %I:%M %p" }} said:</p>
+              {{ comment.message | markdownify }}
+            </li>{% assign slugs = true %}{% endif %}{% endfor %}
+          </ul>{% if slugs == false %}
+          <p>Sorry there are currently no comments. Be the first.</p>{% endif %}
+          <b>Leave a Comment</b>
+          <p class="w3-small">Your email address will not be published. Required fields are marked<span>*</span></p>
+<form role="form" id="commentsForm" method="POST" netlify>
+  <fieldset>
+    <legend>Comment form</legend>
+    <label style ="display: none;"><input name="slug" value="{{ slug }}"/></label>
+    <label style="color: blue;" for="name">Your Name:</label>
+    <input style="border-style: solid; border-width: 1px; padding: 8px; display: block; border: none; border-bottom: 1px solid #ccc; width: 90%;" type="text" name="name" placeholder=" Your Name *" id="name">
+    <label style="color: blue;" for="email">Your Email</label>
+    <input style="border-style: solid; border-width: 1px; padding: 8px; display: block;border: none; border-bottom: 1px solid #ccc; width: 90%;" type="email" name="email" placeholder=" Your Email *" id="email">
+    <label style="color: blue;" for="comment">Your Comment</label>
+    <textarea style="border-style: solid; border-width: 1px; padding: 8px; display: block; border: none; border-bottom: 1px solid #ccc; width: 90%;" name="message" placeholder="Comment" rows="3" id="comment"></textarea>
+    <label style ="display: none;">Don’t fill this out if you're human: <input name="bot-field" /></label>
+  </fieldset>
+  <div class="w3-btn" netlify-recaptcha></div>
+  <p>All comments are reviewed before being published. Abusive. self promoting and off subject comments will NOT be published.</p>
+  <div class="w3-padding-16">
+    <input class="w3-btn w3-blue" type="submit" value="Submit">
+  </div>
+</form>{% else %}
+          <p>Comments are currently disabled for this post.</p>{% endif %}

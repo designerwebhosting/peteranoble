@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<!--index-->
+      <div id="index">
+        <article id="{{ page.url }}">
+          {{  content }}{% for news in site.data.news %}
+          <p><strong>{{ news.date | date: "%-d %B %Y" }}</strong></p>
+          <p>{{ news.content }}</p>{% endfor %}                                        
+          <hr/>
+        </article>{% for post in site.posts %}
+        <section>
+          <div data-{% if post.categories %}{{ post.categories }}{% endif %} id="item{{ forloop.index }}">
+            <img src="{{ post.image}}" alt="{{ post.image_alt_tag }}">
+            <h4><a href="{{ post.url }}" aria-label="{{ post.title }} - {{ post.description }}" >{{ post.title }}</a></h4>
+            <p></p>
+          </div><hr/>
+        </section>{% endfor %}
+      </div>{% capture items %}{% include ldJson/itemList.html %}{% endcapture %}
+      {{ items | normalize_whitespace | strip_newlines }}

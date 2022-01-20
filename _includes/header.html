@@ -1,0 +1,9 @@
+<!--header-->
+      <a href="/">{{ site.title}}</a>
+        <label for="menu-toggle">
+          {{ site.data.icons.menu }}
+        </label>
+        <input type="checkbox" id="menu-toggle"/>
+        <div id="mobile-bar">{% for item in site.data.navigation %}
+          <a href="{{ item.url }}">{{ item.title }}</a>{% endfor %}
+        </div>

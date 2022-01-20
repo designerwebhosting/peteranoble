@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<!-- post Section -->
+    <article id="post" itemscope itemtype="https://schema.org/BlogPosting">
+      <h1 itemprop="headline">{{ page.title }}</h1>{% if page.author %}
+      <p>
+          <b>Created by <a href="/authors/#{{ page.author | slugify }}" aria-label="Learn more about the author of this page.">
+              <author itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span itemprop="name">{{ site.author }}</span>
+              </author></a></b>
+      </p>{% else %}
+      <p>
+          <b>Created by <a href="/about/" aria-label="Learn more about the author of this page.">
+              <author itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">{{ site.author }}</span>
+              </author></a></b>
+      </p>{% endif %}
+      <span itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <img itemprop="url" src="{{ page.image }}" alt="{{ page.image_alt_tag }}">
+        <meta itemprop="width" content="760">
+        <meta itemprop="height" content="499">
+      </span>
+      <span itemprop="mainEntityOfPage" itemscope itemtype="https://schema.org/WebPage" id="{{ page.url }}"></span>
+      <meta itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%d' }}">
+      <meta itemprop="url" content="{{ site.url }}{{ page.url }}">
+      <meta itemprop="description" content="{{ page.description | strip_html | truncatewords: 40 }}">
+      <meta itemprop="dateModified" content="{% if page.last_modified_at %}{{ page.last_modified_at  | date: '%Y-%m-%d' }}{% else %}{{ page.date  | date: '%Y-%m-%d' }}{% endif %}">
+      <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="{{ site.title }}">
+      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="{{ site.url }}{{ page.image }}">
+        <meta itemprop="width" content="232">
+        <meta itemprop="height" content="50">
+      </span>
+    </span>
+    {{  page.md_content | markdownify }}
+   </article>

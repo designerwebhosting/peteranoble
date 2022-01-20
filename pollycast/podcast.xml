@@ -1,0 +1,40 @@
+---
+layout: pollycast
+podcastUrl: https://chtbl.com/track/BCE79B/
+prefix:
+feedId:
+storageUrl: http://feeds.soundcloud.com/stream/
+rssLink: http://peteranoble.co.uk/pollycast/podcast
+title: More Simple ideas
+link: https://peteranoble.co.uk/simple-ideas/
+pubDate: Fri, 17 Apr 2020 19:00:00 +0000
+lastBuildDate: Fri, 17 Apr 2020 19:06:56 +0000
+generator: Pollycast Engine 0.1
+language: en
+copyright: All rights reserved
+docs: https://peteranoble.co.uk
+managingEditor: feedback@peteranoble.co.uk 
+summary: The podcast of Peter Noble.
+image:
+  url: https://via.placeholder.com/1400/0000ff/000000.jpeg?text=Simple+ideas
+  title: Simple ideas
+  link: https://peteranoble.co.uk
+author: Peter Noble
+keywords: podcast,ideas,computing,3d printing,education
+cat:
+  - primary: Education
+    secondary: How To
+  - primary: Society &amp; Culture
+    secondary: Documentary
+  - primary: Technology
+    secondary: 
+iImage: https://via.placeholder.com/1400/0000ff/000000.jpeg?text=Simple+ideas
+explicit: no
+owner:
+  name: Peter Noble
+  email: feedback@peteranoble.co.uk
+description: The podcast of Peter Noble.
+subtitle: Peter Noble's Podcast
+type: episodic
+---
+    

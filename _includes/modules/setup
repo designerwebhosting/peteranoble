@@ -1,0 +1,4 @@
+{% assign split = "</div><div>"%}
+
+{% assign tag = "<b>Testing my tag.</b>"%}
+

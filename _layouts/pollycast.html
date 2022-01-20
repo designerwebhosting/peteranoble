@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:cc="http://web.resource.org/cc/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+	<channel>
+		<atom:link href="{{ page.rssLink }}" rel="self" type="application/rss+xml"/>
+		<title>{{ page.title }}</title>
+		<pubDate>Fri, 17 Apr 2020 19:00:00 +0000</pubDate>
+		<lastBuildDate>Fri, 17 Apr 2020 19:06:56 +0000</lastBuildDate>
+		<generator>{{ page.generator }}</generator>
+		<link>{{ page.link }}</link>
+		<language>{{ page.language }}</language>
+		<copyright><![CDATA[{{ page.copyright }} ]]></copyright>
+		<docs>{{ page.docs }}</docs>
+		<managingEditor>{{ page.managingEditor }}</managingEditor>
+		<itunes:summary><![CDATA[{{ page.summary }} ]]></itunes:summary>
+		<image>
+			<url>{{ page.image.url }}</url>
+			<title>{{ page.image.title }}</title>
+			<link>{{ page.image.link }}</link>
+		</image>
+		<itunes:author>{{ page.author }}</itunes:author>
+		<itunes:keywords>{{ page.keywords }}</itunes:keywords>
+		<itunes:category text="{{ page.cat[0].primary }}">{% if page.cat[0].secondary != null %}
+                        <itunes:category text="{{ page.cat[0].secondary }}"/>{% endif %}
+                </itunes:category>{% if page.cat[1].primary != null %}
+		<itunes:category text="{{ page.cat[1].primary }}">{% if page.cat[1].secondary != null %}
+                        <itunes:category text="{{ page.cat[1].secondary }}"/>{% endif %}{% endif %}
+		</itunes:category>{% if page.cat[2].primary != null %}
+		<itunes:category text="{{ page.cat[2].primary }}">{% if page.cat[2].secondary != null %}
+			<itunes:category text="{{ page.cat[2].secondary }}"/>{% endif %}{% endif %}
+		</itunes:category>
+		<itunes:image href="{{ page.iImage }}" />
+		<itunes:explicit>{{ page.explicit }}</itunes:explicit>
+		<itunes:owner>
+			<itunes:name><![CDATA[{{ page.owner.name }}]]></itunes:name>
+			<itunes:email>{{ page.owner.email }}</itunes:email>
+		</itunes:owner>
+		<description><![CDATA[{{ page.description | strip_html }}]]></description>
+                <content:encoded><![CDATA[{{ page.description }}]]></content:encoded>
+		<itunes:subtitle>{{ page.subtitle | strip_html | truncate: 255 }}</itunes:subtitle>
+		<itunes:type>{{ page.type }}</itunes:type>{% capture nowTime %}{{ site.time | date: '%s'}}{% endcapture %}{% for episode in site.podcast %}{% capture pubTime %}{{ episode.pubDate | date: '%s'}}{% endcapture %}{% if nowTime > pubTime %}
+                <item> e
+			<title>{{ episode.title }}</title>
+			<itunes:title>>{{ episode.title }}</itunes:title>
+			<pubDate>Fri, 17 Apr 2020 19:00:00 +0000</pubDate>
+			<guid>{{ episode.fileGuid }}</guid>
+			<link>{{ episode.pageLink }}</link>
+                        <itunes:image href="{{ episode.imageHref }}" />
+			<description><![CDATA[{{ episode.description }}]]></description>
+			<content:encoded><![CDATA[{{ episode.description }}]]></content:encoded>
+                        <itunes:summary>{{ episode.summary | strip_html }}></itunes:summary>{% if episode.cdnUrl == null %}
+			<enclosure length="{{ episode.enclosure.length }}" type="{{ episode.enclosure.type }}" url="{{ page.podcastUrl }}{{ page.storageUrl }}{{ episode.fileId }}-{{ episode.channelName }}-{{ episode.enclosure.name }}" />{% else %}
+			<enclosure length="{{ episode.enclosure.length }}" type="{{ episode.enclosure.type }}" url="{{ page.podcastUrl }}{{ episode.cdnUrl }}" />{% endif %}
+			<itunes:duration>{{ episode.duration }}</itunes:duration>
+			<itunes:explicit>{{ episode.explicit }}</itunes:explicit>
+			<itunes:keywords>{{ episode.keywords }}</itunes:keywords>
+                        <itunes:author>{{ episode.author }}</itunes:author>
+			<itunes:subtitle>{{ episode.subtitle  | strip_html | truncate: 255}}</itunes:subtitle>
+			<itunes:episode>{{ episode.episode }}</itunes:episode>
+			<itunes:episodeType>{{ episode.episodeType }}</itunes:episodeType>
+                </item>{% endif %}{% endfor %}
+       </channel>
+</rss>
+
+

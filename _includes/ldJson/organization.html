@@ -1,0 +1,23 @@
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "@id": "{{ site.url }}/#organization",
+    "url": "{{ site.url }}/",
+    "name": "{{ site.name }}",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.logo.url }}"
+    },
+    "sameAs": [
+        "{{ site.social[0].link }}"
+    ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "{{ site.email }}",
+        "contactType": "email",
+        "areaServed": [
+            "UK" ]
+    }
+}
+</script>

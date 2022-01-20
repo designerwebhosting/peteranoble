@@ -1,0 +1,18 @@
+<div class="w3-container">
+<form id="myForm" method="POST" netlify>
+<legend>Contact</legend>
+<fieldset>
+<label class="w3-text-blue" for="myName">Name:</label>
+<input class="w3-input w3-border" type="text" id="myName" name="name" placeholder="Your Name *">
+<label class="w3-text-blue">Email</label>
+<input class="w3-input w3-border" type="email" id="myName" name="email" placeholder="Your Email *">
+<label class="w3-text-blue">Message</label>
+<textarea class="w3-input w3-border" id="myName" name="message" value="John" rows="3">Message</textarea>
+<label class ="w3-hide">Don’t fill this out if you're human: <input name="bot-field" /></label>
+</fieldset>
+<div class="w3-btn" netlify-recaptcha></div>
+<div class="w3-padding-16">
+<input class="w3-btn w3-blue" type="submit" value="Submit">
+</div>
+</form>
+</div>

@@ -1,0 +1,11 @@
+<!--head-->
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="{{ site.google-site-verification }}">{% if page.canonical == true or page.canonical == null %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">{% else %}
+  <link rel="canonical" href="{{ page.canonical }}">{% endif %}{% if page.path == "simple-ideas.html" %}
+  <link rel="alternate" type="application/rss+xml" title="Simple Ideas Podcast &raquo; Feed" href="{{ site.url }}/pollycast/podcast.xml" />{% else %}
+  {% feed_meta %}{% endif %}{% capture styles  %}{% include styles.scss %}{% endcapture  %}
+  <style>{{ styles | scssify }}    </style>

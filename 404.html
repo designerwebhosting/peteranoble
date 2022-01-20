@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h2>Houston we have a problem.</h2>
+<p>It looks like you may of arrived at the wrong page. Please check your url or try one of these posts.</p>
+
+<ul class="post-list">{% for post in site.posts %}
+   <li>    
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+   </li>{% endfor %}
+</ul>

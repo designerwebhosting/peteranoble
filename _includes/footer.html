@@ -1,0 +1,33 @@
+<!--footer-->
+      <h3>{{ site.title }}</h3>
+      <div>
+        <p>{{ site.description }}</p>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <li>
+            <a href="/contact/">Contact</a>
+          </li>
+          <li>
+            <a href="/privacy/">Privacy</a>
+          </li>
+        </ul>
+        <p><b>&copy; Copyrignt Peter Noble 2018</b></p>
+      </div>
+      <div>
+        <ul>{% for social in site.social %}
+          <li>
+            <a href="{{ social.link }}">
+              {{ site.data.icons[social.name] }} {{ social.name }}
+            </a>
+          </li>{% endfor %}
+          <li>
+            <a href="/feed.xml">
+              {{ site.data.icons.rss }} rss
+            </a>
+          </li>
+        </ul>
+      </div>

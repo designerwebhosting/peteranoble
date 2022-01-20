@@ -1,0 +1,6 @@
+_site
+.sass-cache
+node_modules
+lambda
+yarn-error.log
+_config2.yml

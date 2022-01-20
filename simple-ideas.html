@@ -1,0 +1,29 @@
+---
+image: /uploads/guggesites-header.jpg
+image_alt_tag: header image
+title: Simple ideas
+description: >-
+  Simple ideas podcast edisodes content infomation.
+tags: 
+- podcast
+date: Fri, 17 Apr 2020 19:00:00 +0000
+last_modified_at: Fri, 17 Apr 2020 19:00:00 +0000
+canonical: true
+---
+<p>The Simple ideas podcast is</p>{% for episode in site.podcast %}
+<div itemscope itemtype="http://schema.org/PodcastEpisode">
+  <h2><span itemprop="name">{{ episode.title }}</span></h2>
+  <meta itemprop="name" content="{{ episode.title }}" />
+  <meta itemprop="dateCreated" content="{{ episode.pubDate }}" />
+  <meta itemprop="encodingFormat" content="{{ episode.enclosure.type }}" />
+  <meta itemprop="timeRequired" content="{{ episode.duration }}" />
+  <meta itemprop="description" content="{{ episode.description | truncate: 200 | append: "..." | markdownify }}" /> 
+  <div itemprop="associatedMedia" itemscope itemtype="http://schema.org/MediaObject">
+    <meta itemprop="contentSize" content="{{ episode.enclosure.length }}" />
+    <audio preload="none" style="width: 100%;" controls="controls">
+      <source itemprop="contentUrl" type="audio/mpeg" src="episodes/{{ episode.audioLink }}">
+    </audio>
+  </div>
+  {{ episode.description | truncate: 200 | append: "..." | markdownify }}
+
+</div>{% endfor %}

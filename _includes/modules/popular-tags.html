@@ -1,0 +1,6 @@
+<p>{% assign tags = site.tags | sort %}{% for tag in tags %}
+  <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">
+    <a href="/my-tags/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+    {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})</a>
+  </span> {% endfor %}
+</p>

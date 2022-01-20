@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<!-- post Section -->
+    <article id="post">
+      <h1>{{ page.title }}</h1>{% if page.author %}
+      <p>
+          <b>Created by <a href="/authors/#{{ page.author | slugify }}" aria-label="Learn more about the author of this page.">
+              {{ page.author }}</a></b>
+      </p>{% else %}
+      <p>
+          <b>Created by <a href="/about/" aria-label="Learn more about the author of this page.">
+              {{ site.author }}</a></b>
+      </p>{% endif %}
+      <img src="{{ page.image }}" alt="{{ page.image_alt_tag }}">
+      {{  content }}
+      {% include ldJson/article.html %}
+   </article>

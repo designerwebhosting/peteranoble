@@ -1,0 +1,6 @@
+<svg version="1.1" viewBox="0 0 200 200" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+   <circle cx="100" cy="100" r="100" stroke="red" stroke-width="1" fill="red" />
+   <circle cx="100" cy="100" r="60" stroke="yellow" stroke-width="1" fill="yellow" />
+    <text x="50" y="100" fill="black">This is cool!</text>
+   Sorry, your browser does not support inline SVG.
+</svg> 

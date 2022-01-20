@@ -1,0 +1,32 @@
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "{{ site.url }}/#website",
+            "url": "{{ site.url }}/",
+            "name": "{{ site.name }}",
+            "inLanguage": "{{ site.language }}",
+            "description": "{{ site.description }}",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "{{ site.url }}/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "{{ page.url }}/#webpage",
+            "url": "{{ page.url }}/",
+            "name": "{{ page.name }}",
+            "isPartOf": {
+                "@id": "{{ site.url }}/#website"
+            },
+            "inLanguage": "{{ site.language }}",
+            "datePublished": "{{ page.datePub }}",
+            "dateModified": "{{ page.dateModified }}"
+        }
+    ]
+}
+</script>

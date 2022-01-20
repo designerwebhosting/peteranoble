@@ -1,0 +1,7 @@
+---
+layout: null
+---
+{% for post in site.posts %}
+  #item{{ forloop.index }} p::after {
+    content: "{{ post.excerpt | strip_html | strip }}";
+  }{% endfor %}

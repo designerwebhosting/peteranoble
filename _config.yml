@@ -1,0 +1,102 @@
+---
+title: Peter Noble
+owner: Peter Noble
+include:
+- _redirects
+exclude:
+- .ruby-version
+- .gitignore
+- functions
+- write.js
+- node_modules
+timezone: UTC
+collections:
+  podcast:
+  posts:
+    title: Posts
+    output: true
+    author: Peter Noble
+    layout: post
+    tags:
+    - 
+    categories:
+    - 
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: "/posts/:title/"
+    image: "/uploads/guggesites-header.png"
+    sitemap: true
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+    image: "/uploads/guggesites-header.png"
+    sitemap: true
+env: development
+author: Peter Noble
+twitter:
+  username:
+telephone: 
+permalink: pretty
+description: A place for sharing my thoughts about stuff around Computing, 3d printing, Renewables and Life.
+excerpt_separator: "<!--more-->"
+plugins:
+- jekyll-sitemap
+- jekyll-seo-tag
+- jekyll-feed
+- jekyll-redirect-from
+- octopress-minify-html
+- json
+- hash-joiner
+- open-uri
+- normalize-scss
+- jeql
+social:
+- name: github
+  link: https://github.com/designerwebhosting
+twitter_username:
+url: https://www.peteranoble.co.uk
+baseurl: 
+lang: en_GB
+name: Peter Noble
+email: feedback@peteranoble.co.uk
+tagline: Exploring stuff around Computing, 3d printing, Renewables and Life, discovering what works.
+jekyll_get:
+- data: comments
+  json: 'https://drive.google.com/uc?export=download&id=16sn0izMDjR44qEui2__hJ-h-1E1IkTRe'
+- data: news
+  json: 'https://drive.google.com/uc?export=download&id=1w1uZSkvCIrZ4zqNL6DYdZs9ekvh18P4V'
+- data: members
+  json: 'https://drive.google.com/uc?export=download&id=1x-NYiSJseWYev4hoQuLIcxpwzU44tGOj'
+sass:
+  style: compressed
+comments: true
+structuredData:
+  date: 2017
+  streetAddress:
+  addressLocality: 
+  addressRegion: Wiltshire
+  postalCode:
+  addressCountry: UK
+google-site-verification: google0063f5aabd0f041b
+page_gen:
+  - index_files: true
+    data: members
+    template: post-data
+    name: name
+    dir: members
+    extension: html
+    filter: 
+copyright: Copyright © 2018-2019 Peter Noble
+language: en-GB
+subtitle: The latest blog posts from Peter Noble.
+sumary: The latest blog posts from Peter Noble.
+

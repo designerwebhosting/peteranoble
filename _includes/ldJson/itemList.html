@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "ItemList",
+    "url": "{{ page.url }}",
+    "itemListElement": [{% for item in site.posts %}
+        {
+            "@type": "ListItem",
+            "position": {{ forloop.index }},
+            "item": {
+                "name": "{{ item.title }}",
+                "@id": "{{ site.url }}{{ item.url }}",
+                "url": "{{ site.url }}{{ item.url }}"
+            }
+        }{% if forloop.last == false %},{% endif %}{% endfor %}
+    ]
+}
+</script>
