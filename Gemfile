@@ -20,9 +20,9 @@ gem "jekyll", "~> 3.9.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.6"
+   gem "jekyll-feed"
    gem "jekyll-sitemap"
-   gem "jekyll-seo-tag", git: "https://github.com/jekyll/jekyll-seo-tag.git", branch: "master"
+   gem "jekyll-seo-tag"
    gem "json"
    gem "hash-joiner"
    gem "open_uri_redirections"

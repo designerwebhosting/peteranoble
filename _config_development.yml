@@ -37,7 +37,7 @@ defaults:
     layout: page
     image: "/uploads/guggesites-header.png"
     sitemap: true
-env: production
+env: development
 author: Peter Noble
 twitter:
   username:
