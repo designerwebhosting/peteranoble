@@ -68,11 +68,9 @@ email: feedback@peteranoble.co.uk
 tagline: Exploring stuff around Computing, 3d printing, Renewables and Life, discovering what works.
 jekyll_get:
 - data: comments
-  json: 'https://drive.google.com/uc?export=download&id=16sn0izMDjR44qEui2__hJ-h-1E1IkTRe'
+  json: 'https://designer-web-hosting.eu-central-1.linodeobjects.com/public/comments.json'
 - data: news
-  json: 'https://drive.google.com/uc?export=download&id=1w1uZSkvCIrZ4zqNL6DYdZs9ekvh18P4V'
-- data: members
-  json: 'https://drive.google.com/uc?export=download&id=1x-NYiSJseWYev4hoQuLIcxpwzU44tGOj'
+  json: 'https://designer-web-hosting.eu-central-1.linodeobjects.com/public/news.json'
 sass:
   style: compressed
 comments: true
