@@ -71,6 +71,8 @@ jekyll_get:
   json: 'https://designer-web-hosting.eu-central-1.linodeobjects.com/public/comments.json'
 - data: news
   json: 'https://designer-web-hosting.eu-central-1.linodeobjects.com/public/news.json'
+- data: members
+  json: 'https://drive.google.com/uc?export=download&id=1x-NYiSJseWYev4hoQuLIcxpwzU44tGOj'
 sass:
   style: compressed
 comments: true
