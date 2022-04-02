@@ -72,7 +72,7 @@ jekyll_get:
 - data: news
   json: 'https://data.designerwebhosting.co.uk/peteranoble/news.json'
 - data: members
-  json: 'https://drive.google.com/uc?export=download&id=1x-NYiSJseWYev4hoQuLIcxpwzU44tGOj'
+  json: 'https://data.designerwebhosting.co.uk/peteranoble/members.json'
 sass:
   style: compressed
 comments: true
